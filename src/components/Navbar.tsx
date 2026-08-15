@@ -46,13 +46,11 @@ const Navbar = () => {
           CB
         </a>
         <a
-          href="https://www.linkedin.com/in/chaitanya-bhujbal-aba168332/"
+          href="mailto:chaitanyabhujbal809@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
-          target="_blank"
-          rel="noreferrer"
         >
-          LinkedIn — Chaitanya Bhujbal
+          chaitanyabhujbal809@gmail.com
         </a>
         <ul>
           <li>

@@ -8,6 +8,16 @@ const Contact = () => {
         <h3>Contact</h3>
         <div className="contact-flex">
           <div className="contact-box">
+            <h4>Reach Out</h4>
+            <p>
+              <a
+                href="mailto:chaitanyabhujbal809@gmail.com"
+                className="contact-social"
+                data-cursor="disable"
+              >
+                chaitanyabhujbal809@gmail.com
+              </a>
+            </p>
             <h4>Connect</h4>
             <p>
               <a
@@ -22,7 +32,7 @@ const Contact = () => {
             </p>
             <h4>Education</h4>
             <p>
-              B.Tech in Computer Engineering, DES Pune University (Pune School of Engineering and Technology) — 2023–2027
+              B.Tech CSE · DES Pune University · CGPA 8.1 · 2024–2027
             </p>
           </div>
           <div className="contact-box">
@@ -54,6 +64,10 @@ const Contact = () => {
             >
               Instagram <MdArrowOutward />
             </a>
+            <div className="contact-open-source">
+              <span className="oss-badge">🦈 Pull Shark</span>
+              <span className="oss-badge">13 Public Repos</span>
+            </div>
           </div>
           <div className="contact-box">
             <h2>

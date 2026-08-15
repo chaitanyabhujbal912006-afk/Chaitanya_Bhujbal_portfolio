@@ -59,6 +59,25 @@ a.contact-social {
   opacity: 0.5;
 }
 
+/* Open source badges */
+.contact-open-source {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.oss-badge {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.07);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
 @media only screen and (max-width: 1600px) {
   .contact-section h3 {
     font-size: 50px;
