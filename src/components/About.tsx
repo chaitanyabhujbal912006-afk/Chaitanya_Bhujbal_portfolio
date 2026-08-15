@@ -6,13 +6,50 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I am a Computer Engineering Student passionate about building scalable
-          systems and real-world solutions. My expertise lies in exploring the
-          intersection of Cloud, Backend, and System Design, with a strong focus on
-          Data Structures and Problem Solving. Currently, I am deeply involved in
-          Healthcare Tech Projects, developing intelligent systems to improve
-          patient outcomes and operational efficiency.
+          Third-year CSE student at DESPU building backend systems, AI
+          applications, and healthcare tech — while wearing a second hat as
+          <strong> Design Head</strong> of the{" "}
+          <strong>AWS Student Builder Club</strong>. From kernel-level code to
+          canvas paintings, I operate at the rare intersection of engineering
+          precision and visual creativity.
         </p>
+
+        {/* Identity pills */}
+        <div className="about-identity">
+          <span className="identity-pill identity-pill--tech">⚙️ Backend Dev</span>
+          <span className="identity-pill identity-pill--cloud">☁️ Cloud & DevOps</span>
+          <span className="identity-pill identity-pill--design">🎨 Design Head</span>
+          <span className="identity-pill identity-pill--art">🖼️ Canvas Artist</span>
+        </div>
+
+        <div className="about-stats">
+          <div className="about-stat">
+            <span className="stat-value">13+</span>
+            <span className="stat-label">Public Repos</span>
+          </div>
+          <div className="about-stat">
+            <span className="stat-value">8.1</span>
+            <span className="stat-label">CGPA / 10</span>
+          </div>
+          <div className="about-stat">
+            <span className="stat-value">🏆</span>
+            <span className="stat-label">India Book of Records</span>
+          </div>
+          <div className="about-stat">
+            <span className="stat-value">3rd</span>
+            <span className="stat-label">Year · 2027</span>
+          </div>
+        </div>
+
+        <div className="about-learning">
+          <span className="learning-label">Currently learning</span>
+          <div className="learning-tags">
+            <span>Kubernetes</span>
+            <span>AWS Certification</span>
+            <span>Microservices</span>
+            <span>Advanced System Design</span>
+          </div>
+        </div>
       </div>
     </div>
   );

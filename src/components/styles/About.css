@@ -12,7 +12,7 @@
 .about-me {
   padding: 50px 0px;
   padding-bottom: 0;
-  width: 500px;
+  width: 560px;
   max-width: calc(100% - 15px);
 }
 .about-me h3 {
@@ -30,6 +30,123 @@
   letter-spacing: 1px;
 }
 
+/* Stats row */
+.about-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 2px solid var(--accentColor);
+  padding-left: 12px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accentColor);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Identity pills — who you are at a glance */
+.about-identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 4px;
+}
+
+.identity-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 30px;
+  letter-spacing: 0.4px;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.identity-pill:hover {
+  transform: translateY(-2px);
+}
+
+.identity-pill--tech {
+  border-color: rgba(94, 234, 212, 0.4);
+  color: #5eead4;
+  background: rgba(94, 234, 212, 0.08);
+}
+
+.identity-pill--cloud {
+  border-color: rgba(99, 179, 237, 0.4);
+  color: #63b3ed;
+  background: rgba(99, 179, 237, 0.08);
+}
+
+.identity-pill--design {
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.identity-pill--art {
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+/* Currently Learning */
+.about-learning {
+  margin-top: 28px;
+}
+
+.learning-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.learning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.learning-tags span {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.06);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.learning-tags span:hover {
+  background: rgba(94, 234, 212, 0.15);
+  border-color: var(--accentColor);
+}
+
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
@@ -37,7 +154,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: 560px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -61,6 +178,9 @@
   .about-me p {
     font-size: 1.9vw;
     line-height: 2.3vw;
+  }
+  .stat-value {
+    font-size: 2.2vw;
   }
 }
 @media only screen and (min-width: 1950px) {
