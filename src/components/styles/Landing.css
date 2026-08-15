@@ -192,9 +192,47 @@
   font-family: "Geist", sans-serif;
 }
 
-/* .landing-intro h1 span {
-   font-weight: 200; 
-} */
+/* Specialty badges on landing */
+.landing-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.landing-badge {
+  font-size: 11px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.07);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.landing-badge--design {
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.landing-badge--art {
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+/* Location text */
+.landing-location {
+  font-size: 13px;
+  font-weight: 300;
+  opacity: 0.55;
+  margin: 0;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
 
 .landing-info {
   position: absolute;
