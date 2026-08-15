@@ -5,7 +5,10 @@
   place-items: center;
   position: relative;
   opacity: 1;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
+  padding: 80px 0;
+  box-sizing: border-box;
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
@@ -38,6 +41,28 @@
   margin-left: 200px;
   position: relative;
   display: none;
+}
+
+/* Triple-panel: 3 × ~240px = 720px */
+.what-box-in--triple {
+  height: 720px;
+}
+
+/* Ensure triple panel min-height uses fixed px, not % of parent */
+.what-box-in--triple .what-content {
+  height: auto;
+  min-height: 240px;
+}
+
+.what-box-in--triple .what-noTouch:hover,
+.what-box-in--triple .what-content-active {
+  min-height: 340px;
+}
+
+.what-box-in--triple .what-noTouch:hover ~ .what-content,
+.what-box-in--triple:hover .what-noTouch:not(:hover),
+.what-box-in--triple .what-content.what-sibling {
+  min-height: 180px;
 }
 .what-content {
   width: 450px;
@@ -204,6 +229,11 @@
   transform: translateY(-50%);
   position: absolute;
 }
+
+/* Triple border height matches triple container */
+.what-box-in--triple .what-border2 svg {
+  height: 720px;
+}
 .what-content-in {
   height: 100%;
   overflow: hidden;
@@ -257,14 +287,7 @@
   margin-bottom: 8px;
 }
 
-/* ── Triple-panel container ── */
-.what-box-in--triple {
-  height: 750px;
-}
 
-.what-box-in--triple .what-border2 svg {
-  height: 750px;
-}
 @media only screen and (max-width: 1600px) {
   .what-box h2 {
     margin-right: 18%;
@@ -334,14 +357,14 @@
   }
   .what-noTouch:hover,
   .what-content-active {
-    min-height: 67%;
+    min-height: 340px;
     padding: 50px;
   }
 
   .what-noTouch:hover ~ .what-content,
   .what-box-in:hover .what-noTouch:not(:hover),
   .what-content.what-sibling {
-    min-height: 33%;
+    min-height: 170px;
     padding: 10px 50px;
   }
 }
@@ -359,6 +382,10 @@
   }
   .what-box:last-child {
     height: 500px;
+  }
+  .what-box-in--triple ~ .what-box:last-child,
+  .what-box:last-child:has(.what-box-in--triple) {
+    height: 680px;
   }
   .what-box {
     width: 500px;

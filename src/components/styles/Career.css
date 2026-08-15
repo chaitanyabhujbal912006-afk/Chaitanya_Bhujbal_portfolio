@@ -9,7 +9,9 @@
   height: auto;
   margin: auto;
   margin-bottom: 250px;
-  padding: 120px 0px;
+  padding: 160px 0px;
+  z-index: 2;
+  background-color: var(--backgroundColor);
 }
 
 .career-section h2 {
