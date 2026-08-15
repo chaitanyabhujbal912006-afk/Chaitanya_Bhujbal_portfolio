@@ -107,6 +107,80 @@
   font-size: 15px;
 }
 
+/* Title row with language badge */
+.carousel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.carousel-lang-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.08);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.carousel-description {
+  font-weight: 300;
+  color: #c5c4c4;
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+/* GitHub / Live link buttons */
+.carousel-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.carousel-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: #eae5ec;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.carousel-link-btn:hover {
+  background: rgba(94, 234, 212, 0.12);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+}
+
+.carousel-link-btn-secondary {
+  background: transparent;
+  border-color: transparent;
+  opacity: 0.6;
+}
+
+.carousel-link-btn-secondary:hover {
+  opacity: 1;
+  background: rgba(94, 234, 212, 0.08);
+  border-color: rgba(94, 234, 212, 0.3);
+  color: var(--accentColor);
+}
+
 .carousel-image-wrapper {
   flex: 1;
   display: flex;
