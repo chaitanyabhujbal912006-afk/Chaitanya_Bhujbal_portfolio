@@ -239,6 +239,32 @@
   border: 1px solid #ffffff50;
   border-radius: 30px;
 }
+
+/* ── Design panel badge ── */
+.what-design-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.07);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 8px;
+}
+
+/* ── Triple-panel container ── */
+.what-box-in--triple {
+  height: 750px;
+}
+
+.what-box-in--triple .what-border2 svg {
+  height: 750px;
+}
 @media only screen and (max-width: 1600px) {
   .what-box h2 {
     margin-right: 18%;
@@ -250,6 +276,9 @@
   }
   .what-box-in {
     height: 400px;
+  }
+  .what-box-in--triple {
+    height: 600px;
   }
   .what-content h3 {
     font-size: 28px;
@@ -292,6 +321,9 @@
   .what-box-in {
     height: 500px;
     margin-left: -50px;
+  }
+  .what-box-in--triple {
+    height: 700px;
   }
   .what-content {
     padding: 50px;
@@ -339,6 +371,9 @@
   .what-box-in {
     margin-left: 0px;
     height: 450px;
+  }
+  .what-box-in--triple {
+    height: 650px;
   }
   .what-content h5,
   .what-content-flex {

@@ -35,7 +35,7 @@ const WhatIDo = () => {
         </h2>
       </div>
       <div className="what-box">
-        <div className="what-box-in">
+        <div className="what-box-in what-box-in--triple">
           <div className="what-border2">
             <svg width="100%">
               <line
@@ -58,6 +58,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* Panel 1 — Backend & Cloud */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -85,26 +87,30 @@ const WhatIDo = () => {
               </svg>
             </div>
             <div className="what-corner"></div>
-
             <div className="what-content-in">
-              <h3>HEALTHCARE AI & SYSTEMS</h3>
-              <h4>Intelligent Solutions for ICU & Clinical Data</h4>
+              <h3>BACKEND & CLOUD</h3>
+              <h4>Distributed Systems Built for Scale</h4>
               <p>
-                Developing multi-agent AI systems (OmniKavach) to process complex healthcare
-                data streams, providing early risk insights and evidence-backed reasoning.
+                Engineering robust backend architectures with Node.js, Express, and Python.
+                Leveraging AWS, Docker, and Kubernetes to build cloud-native, highly available
+                services with microservices patterns and advanced system design.
               </p>
-              <h5>Expertise</h5>
+              <h5>Skillset & Tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Multi-Agent AI</div>
-                <div className="what-tags">Healthcare Data</div>
-                <div className="what-tags">Predictive Insights</div>
-                <div className="what-tags">System Scalability</div>
-                <div className="what-tags">Healthcare Tech</div>
-                <div className="what-tags">Internal Ops</div>
+                <div className="what-tags">Node.js / Express</div>
+                <div className="what-tags">AWS</div>
+                <div className="what-tags">Docker / Kubernetes</div>
+                <div className="what-tags">PostgreSQL / MongoDB</div>
+                <div className="what-tags">Redis</div>
+                <div className="what-tags">GraphQL</div>
+                <div className="what-tags">Microservices</div>
+                <div className="what-tags">System Design</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* Panel 2 — Healthcare AI & Applied AI */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -124,24 +130,67 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND & CLOUD</h3>
-              <h4>Engineered for Scale and Reliability</h4>
+              <h3>HEALTHCARE AI & APPLIED AI</h3>
+              <h4>Intelligent Systems for Real-World Impact</h4>
               <p>
-                Build robust backend architectures using Flask and Python, leveraging Cloud
-                fundamentals (AWS) to ensure high availability and performance.
+                Building multi-agent AI systems (OmniKavach), HIPAA-compliant EDI parsers,
+                RAG knowledge bases (Nexa), and CVE scanners (ReachGuard) that solve real
+                clinical and security problems at scale.
               </p>
-              <h5>Skillset & tools</h5>
+              <h5>Expertise</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Python / Flask</div>
-                <div className="what-tags">Cloud Fundamentals (AWS)</div>
-                <div className="what-tags">API Design</div>
-                <div className="what-tags">System Design</div>
-                <div className="what-tags">Figma (UI/UX)</div>
-                <div className="what-tags">Data Structures</div>
+                <div className="what-tags">Multi-Agent AI</div>
+                <div className="what-tags">RAG Systems</div>
+                <div className="what-tags">Healthcare Data (EDI)</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">LLMs & NLP</div>
+                <div className="what-tags">CVE / Security</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* Panel 3 — Design & Creative */}
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 2)}
+          >
+            <div className="what-border1">
+              <svg height="100%">
+                <line
+                  x1="0"
+                  y1="100%"
+                  x2="100%"
+                  y2="100%"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeDasharray="6,6"
+                />
+              </svg>
+            </div>
+            <div className="what-corner"></div>
+            <div className="what-content-in">
+              <div className="what-design-badge">🏆 India Book of Records</div>
+              <h3>DESIGN & CREATIVE</h3>
+              <h4>Where Code Meets Canvas</h4>
+              <p>
+                Design Head at the <strong>AWS Student Builder Club — DESPU</strong> (Core Team).
+                Leads visual identity for college events, social media, and community branding.
+                Professional canvas painter with a <strong>national record</strong> in the India Book of Records.
+              </p>
+              <h5>Creative Skills</h5>
+              <div className="what-content-flex">
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Brand Identity</div>
+                <div className="what-tags">Event Design</div>
+                <div className="what-tags">Social Media Creatives</div>
+                <div className="what-tags">Canvas Painting</div>
+                <div className="what-tags">UI/UX</div>
+              </div>
+              <div className="what-arrow"></div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -155,7 +204,6 @@ function handleClick(container: HTMLDivElement) {
   container.classList.remove("what-sibling");
   if (container.parentElement) {
     const siblings = Array.from(container.parentElement.children);
-
     siblings.forEach((sibling) => {
       if (sibling !== container) {
         sibling.classList.remove("what-content-active");
