@@ -18,9 +18,14 @@ const imageUrls = [
   "/images/node2.webp",
   "/images/express.webp",
   "/images/mongo.webp",
-  "/images/mysql.webp",
   "/images/typescript.webp",
   "/images/javascript.webp",
+  "/images/mysql.webp",
+  // Additional icons loaded from CDN (fallback to placeholder if blocked)
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
