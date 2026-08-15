@@ -142,6 +142,59 @@
   }
 }
 
+/* ── Highlighted box — AWS Club ── */
+.career-info-box--highlight {
+  border-left: 2px solid rgba(94, 234, 212, 0.4);
+  padding-left: 18px;
+  background: linear-gradient(90deg, rgba(94, 234, 212, 0.04) 0%, transparent 60%);
+  border-radius: 0 8px 8px 0;
+  margin-left: -20px;
+}
+
+/* ── Record box — India Book of Records ── */
+.career-info-box--record {
+  border-left: 2px solid rgba(251, 191, 36, 0.5);
+  padding-left: 18px;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.04) 0%, transparent 60%);
+  border-radius: 0 8px 8px 0;
+  margin-left: -20px;
+}
+
+.career-record-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.08);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 6px;
+}
+
+/* ── Tag pills on career entries ── */
+.career-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.career-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  color: var(--accentColor);
+  background: rgba(94, 234, 212, 0.06);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
 @media only screen and (max-width: 1400px) {
   .career-section h2 {
     font-size: 50px;
