@@ -13,8 +13,9 @@ const Navbar = () => {
     smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
+      smooth: 1.5,
+      smoothTouch: 0.1,
+      speed: 1.5,
       effects: true,
       autoResize: true,
       ignoreMobileResize: true,
@@ -27,11 +28,17 @@ const Navbar = () => {
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+        e.preventDefault();
+        let targetId = element.getAttribute("data-href");
+        if (targetId) {
+          if (window.innerWidth > 1024 && smoother) {
+            smoother.scrollTo(targetId, true, "top top");
+          } else {
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+              targetElem.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
         }
       });
     });
