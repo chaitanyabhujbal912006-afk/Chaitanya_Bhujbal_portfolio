@@ -139,6 +139,8 @@
   font-size: 14px;
   line-height: 1.6;
   max-width: 420px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* GitHub / Live link buttons */
@@ -267,6 +269,10 @@
 
 .work-image-in {
   position: relative;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-link {
