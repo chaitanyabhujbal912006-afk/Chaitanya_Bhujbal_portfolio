@@ -297,3 +297,101 @@
     justify-content: left;
   }
 }
+
+/* ══════════════════════════════════════════
+   Extracurricular Section
+══════════════════════════════════════════ */
+.career-extra {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.career-extra-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin: 0 0 24px 0;
+}
+
+.career-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.career-extra-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.career-extra-card:hover {
+  border-color: rgba(94, 234, 212, 0.2);
+  background: rgba(94, 234, 212, 0.03);
+}
+
+.career-extra-card-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.career-extra-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.career-extra-card-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #eae5ec;
+}
+
+.career-extra-card-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #9c9aa0;
+  margin: 0;
+}
+
+.career-extra-link {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 12px;
+  color: var(--accentColor);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.career-extra-link:hover {
+  opacity: 1;
+  color: var(--accentColor);
+}
+
+@media only screen and (max-width: 900px) {
+  .career-extra-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-extra {
+    margin-top: 40px;
+  }
+}

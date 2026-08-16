@@ -170,13 +170,12 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <div className="what-design-badge">🏆 India Book of Records</div>
               <h3>DESIGN & CREATIVE</h3>
               <h4>Where Code Meets Canvas</h4>
               <p>
                 Design Head at the <strong>AWS Student Builder Club — DESPU</strong> (Core Team).
                 Leads visual identity for college events, social media, and community branding.
-                Professional canvas painter with a <strong>national record</strong> in the India Book of Records.
+                Fine-detail sculptor and canvas painter with an eye for composition and precision.
               </p>
               <h5>Creative Skills</h5>
               <div className="what-content-flex">

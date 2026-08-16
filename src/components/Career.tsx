@@ -41,7 +41,7 @@ const Career = () => {
             <p>
               Serving as <strong>Design Head on the Core Team</strong> of the AWS Student Builder Club at DESPU.
               Leads all visual design work — event branding, social media creatives, promotional material,
-              and community identity — bridging the gap between cloud technology and compelling design.
+              and community identity.
             </p>
             <div className="career-tags-row">
               <span className="career-tag">Figma</span>
@@ -50,23 +50,6 @@ const Career = () => {
               <span className="career-tag">Social Media</span>
               <span className="career-tag">AWS Community</span>
             </div>
-          </div>
-
-          {/* India Book of Records */}
-          <div className="career-info-box career-info-box--record">
-            <div className="career-info-in">
-              <div className="career-role">
-                <div className="career-record-badge">🏆 National Record</div>
-                <h4>India Book of Records</h4>
-                <h5>Canvas Painting · National Recognition</h5>
-              </div>
-              <h3>2024</h3>
-            </div>
-            <p>
-              Awarded a <strong>national record</strong> in the India Book of Records for canvas painting.
-              Also an active professional canvas artist — creating large-format works and contributing
-              design expertise to college events and social media campaigns at DESPU.
-            </p>
           </div>
 
           {/* OmniKavach */}
@@ -119,6 +102,46 @@ const Career = () => {
           </div>
 
         </div>
+
+        {/* ── Extracurricular ── */}
+        <div className="career-extra">
+          <h4 className="career-extra-title">Extracurricular</h4>
+          <div className="career-extra-grid">
+
+            <div className="career-extra-card">
+              <div className="career-extra-card-icon">🏆</div>
+              <div className="career-extra-card-body">
+                <span className="career-extra-card-label">India Book of Records</span>
+                <p className="career-extra-card-desc">
+                  Youngest to carve out 13 chains from 13 single chalk sticks using only a pin &amp; scraping tool —
+                  each chain measuring 9 cm × 1 cm. Confirmed age: <strong>14 years, 8 months</strong>.
+                  <a
+                    href="https://indiabookofrecords.in/youngest-to-carve-out-chains-from-chalk-sticks-record/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="career-extra-link"
+                    data-cursor="disable"
+                  >
+                    View record ↗
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div className="career-extra-card">
+              <div className="career-extra-card-icon">🎨</div>
+              <div className="career-extra-card-body">
+                <span className="career-extra-card-label">Canvas Painting & Visual Arts</span>
+                <p className="career-extra-card-desc">
+                  Professional canvas painter — large-format works and fine-detail sculptures.
+                  Contributes design and artwork to college events and social media campaigns at DESPU.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   );

@@ -7,19 +7,19 @@ const About = () => {
         <h3 className="title">About Me</h3>
         <p className="para">
           Third-year CSE student at DESPU building backend systems, AI
-          applications, and healthcare tech — while wearing a second hat as
-          <strong> Design Head</strong> of the{" "}
-          <strong>AWS Student Builder Club</strong>. From kernel-level code to
-          canvas paintings, I operate at the rare intersection of engineering
-          precision and visual creativity.
+          applications, and healthcare tech — while wearing a second hat as{" "}
+          <strong>Design Head</strong> of the{" "}
+          <strong>AWS Student Builder Club</strong>. Actively contributes to
+          open source, earning the GitHub{" "}
+          <strong>"Pull Shark"</strong> achievement.
         </p>
 
         {/* Identity pills */}
         <div className="about-identity">
           <span className="identity-pill identity-pill--tech">⚙️ Backend Dev</span>
           <span className="identity-pill identity-pill--cloud">☁️ Cloud & DevOps</span>
-          <span className="identity-pill identity-pill--design">🎨 Design Head</span>
-          <span className="identity-pill identity-pill--art">🖼️ Canvas Artist</span>
+          <span className="identity-pill identity-pill--design">🎨 Design Head · AWS Club</span>
+          <span className="identity-pill identity-pill--art">🏆 India Book of Records</span>
         </div>
 
         <div className="about-stats">
@@ -30,10 +30,6 @@ const About = () => {
           <div className="about-stat">
             <span className="stat-value">8.1</span>
             <span className="stat-label">CGPA / 10</span>
-          </div>
-          <div className="about-stat">
-            <span className="stat-value">🏆</span>
-            <span className="stat-label">India Book of Records</span>
           </div>
           <div className="about-stat">
             <span className="stat-value">3rd</span>

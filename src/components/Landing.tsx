@@ -17,7 +17,6 @@ const Landing = ({ children }: PropsWithChildren) => {
               <span className="landing-badge">Backend Dev</span>
               <span className="landing-badge">Cloud & DevOps</span>
               <span className="landing-badge landing-badge--design">Design Head · AWS Club</span>
-              <span className="landing-badge landing-badge--art">🏆 India Book of Records</span>
             </div>
           </div>
           <div className="landing-info">
