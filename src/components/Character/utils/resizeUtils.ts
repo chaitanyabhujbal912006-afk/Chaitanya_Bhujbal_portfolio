@@ -13,8 +13,17 @@ export default function handleResize(
   const width = canvas3d.width;
   const height = canvas3d.height;
   renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   camera.aspect = width / height;
+
+  // Mobile portrait view (aspect < 1) vs Desktop landscape
+  if (camera.aspect < 1) {
+    camera.zoom = 0.75; // Move camera back / zoom out so 3D model isn't chopped on mobile
+  } else {
+    camera.zoom = 1.1; // Default desktop zoom
+  }
   camera.updateProjectionMatrix();
+
   const workTrigger = ScrollTrigger.getById("work");
   ScrollTrigger.getAll().forEach((trigger) => {
     if (trigger != workTrigger) {

@@ -32,15 +32,15 @@ const Scene = () => {
         antialias: true,
       });
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
+      renderer.domElement.style.touchAction = "pan-y";
       canvasDiv.current.appendChild(renderer.domElement);
 
       const camera = new THREE.PerspectiveCamera(14.5, aspect, 0.1, 1000);
-      camera.position.z = 10;
       camera.position.set(0, 13.1, 24.7);
-      camera.zoom = 1.1;
+      camera.zoom = aspect < 1 ? 0.75 : 1.1;
       camera.updateProjectionMatrix();
 
       let headBone: THREE.Object3D | null = null;
