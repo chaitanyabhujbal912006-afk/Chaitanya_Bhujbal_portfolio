@@ -4,8 +4,6 @@
   justify-content: left;
   place-items: center;
   position: relative;
-  z-index: 5;
-  background-color: var(--backgroundColor);
   opacity: 1;
   height: auto;
   width: var(--cWidth);
@@ -147,20 +145,6 @@
 .learning-tags span:hover {
   background: rgba(94, 234, 212, 0.15);
   border-color: var(--accentColor);
-}
-
-@media only screen and (max-width: 600px) {
-  .about-me p {
-    font-size: 22px;
-    line-height: 30px;
-  }
-  .about-me h3 {
-    font-size: 20px;
-    letter-spacing: 5px;
-  }
-  .stat-value {
-    font-size: 24px;
-  }
 }
 
 @media only screen and (min-width: 600px) {

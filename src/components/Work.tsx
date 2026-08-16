@@ -151,13 +151,7 @@ const Work = () => {
                         <p className="carousel-description">{project.description}</p>
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
-                          <div className="tools-pills-row">
-                            {project.tools.split(", ").map((tool, tIdx) => (
-                              <span key={tIdx} className="tool-pill">
-                                {tool}
-                              </span>
-                            ))}
-                          </div>
+                          <p>{project.tools}</p>
                         </div>
                         <div className="carousel-links">
                           <a
