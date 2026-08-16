@@ -32,7 +32,7 @@ const Contact = () => {
             </p>
             <h4>Education</h4>
             <p>
-              B.Tech CSE · DES Pune University · CGPA 8.1 · 2024–2027
+              B.Tech CSE · DES Pune University · CGPA 8.1 · 2024–2028
             </p>
           </div>
           <div className="contact-box">

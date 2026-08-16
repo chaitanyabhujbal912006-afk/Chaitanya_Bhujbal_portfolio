@@ -32,7 +32,7 @@ const About = () => {
           </div>
           <div className="about-stat">
             <span className="stat-value">3rd</span>
-            <span className="stat-label">Year · 2027</span>
+            <span className="stat-label">Year · 2028</span>
           </div>
         </div>
 

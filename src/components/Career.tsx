@@ -25,7 +25,7 @@ const Career = () => {
             </div>
             <div className="career-info-content">
               <p>
-                CGPA: <strong>8.1 / 10</strong> · Third Year (Expected Graduation: 2027).
+                CGPA: <strong>8.1 / 10</strong> · Third Year (Expected Graduation: 2028).
                 Focused on backend development, cloud infrastructure, Kubernetes, and system design.
               </p>
             </div>
