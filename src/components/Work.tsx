@@ -107,16 +107,6 @@ const Work = () => {
         </h2>
 
         <div className="carousel-wrapper">
-          {/* Navigation Arrows for Desktop */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={goToPrev}
-            aria-label="Previous project"
-            data-cursor="disable"
-          >
-            <MdArrowBack />
-          </button>
-
           {/* Slides Track */}
           <div className="carousel-track-container">
             <div
@@ -189,28 +179,37 @@ const Work = () => {
             </div>
           </div>
 
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={goToNext}
-            aria-label="Next project"
-            data-cursor="disable"
-          >
-            <MdArrowForward />
-          </button>
-
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-dot ${
-                  index === currentIndex ? "carousel-dot-active" : ""
-                }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to project ${index + 1}`}
-                data-cursor="disable"
-              />
-            ))}
+          {/* Controls Bar: Arrows + Dots */}
+          <div className="carousel-controls-bar">
+            <button
+              className="carousel-arrow carousel-arrow-left"
+              onClick={goToPrev}
+              aria-label="Previous project"
+              data-cursor="disable"
+            >
+              <MdArrowBack />
+            </button>
+            <div className="carousel-dots">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  className={`carousel-dot ${
+                    index === currentIndex ? "carousel-dot-active" : ""
+                  }`}
+                  onClick={() => goToSlide(index)}
+                  aria-label={`Go to project ${index + 1}`}
+                  data-cursor="disable"
+                />
+              ))}
+            </div>
+            <button
+              className="carousel-arrow carousel-arrow-right"
+              onClick={goToNext}
+              aria-label="Next project"
+              data-cursor="disable"
+            >
+              <MdArrowForward />
+            </button>
           </div>
         </div>
       </div>
