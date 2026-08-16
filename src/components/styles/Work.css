@@ -479,13 +479,15 @@
   }
 
   .carousel-info {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .carousel-details {
+    display: block;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .carousel-number h3 {
@@ -493,6 +495,7 @@
     letter-spacing: 2px;
     color: var(--accentColor);
     opacity: 0.8;
+    margin-bottom: 6px;
   }
 
   .carousel-details h4 {
@@ -500,8 +503,24 @@
     line-height: 26px;
   }
 
-  .carousel-description {
+  .carousel-category {
+    display: block;
+    width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .carousel-description {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
     font-size: 13.5px;
     line-height: 20px;
   }
