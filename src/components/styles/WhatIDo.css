@@ -371,69 +371,107 @@
 @media only screen and (max-width: 900px) {
   .whatIDO {
     flex-direction: column;
+    padding: 60px 0;
+    height: auto;
   }
   .what-box h2 {
-    margin: 50px 0;
-    font-size: 55px;
-    line-height: 53px;
+    margin: 30px 0;
+    font-size: 42px;
+    line-height: 42px;
   }
   .what-box:first-child {
     justify-content: left;
+    width: 100%;
   }
   .what-box:last-child {
-    height: 500px;
+    height: auto !important;
+    width: 100%;
   }
   .what-box-in--triple ~ .what-box:last-child,
   .what-box:last-child:has(.what-box-in--triple) {
-    height: 680px;
+    height: auto !important;
   }
   .what-box {
-    width: 500px;
-    max-width: calc(100% - 50px);
-    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
-  .what-content {
+  .what-box-in,
+  .what-box-in--triple {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 0;
     width: 100%;
   }
-  .what-box-in {
-    margin-left: 0px;
-    height: 450px;
+  .what-content {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: 80px; /* Collapsed state showing only headers */
+    padding: 20px 20px !important;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, border-color 0.3s ease;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
   }
-  .what-box-in--triple {
-    height: 650px;
+  .what-content-active {
+    max-height: 500px !important; /* Expanded state showing descriptions & pills */
+    padding: 20px 20px !important;
+    border-color: rgba(94, 234, 212, 0.25);
   }
+  .what-content h3 {
+    font-size: 20px !important;
+    margin: 0 0 2px 0 !important;
+  }
+  .what-content h4 {
+    font-size: 13px !important;
+    margin: 0 !important;
+    opacity: 0.6;
+  }
+  /* Slide transition elements inside card */
+  .what-content p,
   .what-content h5,
   .what-content-flex {
     opacity: 0;
-    transition: 0.3s;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease;
   }
-  .what-noTouch:hover h5,
-  .what-content-active h5,
-  .what-noTouch:hover .what-content-flex,
+  .what-content-active p {
+    opacity: 0.8;
+    max-height: 150px;
+    margin-top: 14px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .what-content-active h5 {
+    opacity: 0.6;
+    max-height: 30px;
+    margin-top: 16px;
+    font-size: 12px;
+  }
   .what-content-active .what-content-flex {
     opacity: 1;
-  }
-  .what-content {
-    padding: 30px;
-  }
-  .what-content p {
-    font-size: 11px;
-  }
-  .what-noTouch:hover,
-  .what-content-active {
-    padding: 10px 30px;
+    max-height: 250px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .what-tags {
     font-size: 11px;
+    padding: 4px 10px;
   }
-
-  .what-noTouch:hover ~ .what-content,
-  .what-box-in:hover .what-noTouch:not(:hover),
-  .what-content.what-sibling {
-    padding: 5px 30px;
+  .what-arrow {
+    display: none !important;
   }
-  .what-content h3 {
-    font-size: 25px;
+  .what-border1,
+  .what-border2 {
+    display: none !important;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -441,9 +479,10 @@
     place-items: inherit;
     align-items: start;
     justify-content: left;
+    padding: 40px 0;
   }
   .what-box {
-    max-width: calc(100% - 25px);
+    max-width: 100%;
     margin: 0;
   }
 }

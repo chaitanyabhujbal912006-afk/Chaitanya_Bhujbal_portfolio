@@ -8,18 +8,27 @@ const WhatIDo = () => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
-    if (ScrollTrigger.isTouch) {
+    const isTouchDevice =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches;
+
+    if (isTouchDevice) {
       containerRef.current.forEach((container) => {
         if (container) {
           container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
+          const clickHandler = () => handleClick(container);
+          container.addEventListener("click", clickHandler);
+          // Keep reference to clean up
+          (container as any)._clickHandler = clickHandler;
         }
       });
     }
+
     return () => {
       containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
+        if (container && (container as any)._clickHandler) {
+          container.removeEventListener("click", (container as any)._clickHandler);
         }
       });
     };
