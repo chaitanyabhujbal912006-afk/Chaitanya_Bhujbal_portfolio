@@ -104,11 +104,22 @@
   letter-spacing: 1px;
 }
 
-.carousel-tools p {
-  font-weight: 200;
-  color: #adacac;
-  margin: 6px 0 0;
-  font-size: 15px;
+.tools-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tool-pill {
+  font-size: 11px;
+  font-weight: 400;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.3px;
 }
 
 /* Title row with language badge */
@@ -409,6 +420,46 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .carousel-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .carousel-number h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--accentColor);
+    opacity: 0.8;
+  }
+
+  .carousel-details h4 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .carousel-category {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .carousel-description {
+    font-size: 13.5px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .tools-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .tool-pill {
+    font-size: 10.5px;
+    padding: 2px 8px;
+  }
+
   .carousel-arrow {
     width: 36px;
     height: 36px;
@@ -430,12 +481,17 @@
   }
 
   .carousel-links {
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    width: 100%;
   }
 
   .carousel-link-btn {
-    font-size: 12px;
-    padding: 8px 14px;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    font-size: 12.5px;
+    padding: 10px 16px;
   }
 }
