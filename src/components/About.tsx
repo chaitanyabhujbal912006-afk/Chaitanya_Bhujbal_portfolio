@@ -9,9 +9,8 @@ const About = () => {
           Third-year CSE student at DESPU building backend systems, AI
           applications, and healthcare tech — while wearing a second hat as{" "}
           <strong>Design Head</strong> of the{" "}
-          <strong>AWS Student Builder Club</strong>. Actively contributes to
-          open source, earning the GitHub{" "}
-          <strong>"Pull Shark"</strong> achievement.
+          <strong>AWS Student Builder Club</strong>. 13+ public repos spanning
+          backend, cloud, and applied AI.
         </p>
 
         {/* Identity pills */}

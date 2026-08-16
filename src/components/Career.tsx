@@ -93,23 +93,6 @@ const Career = () => {
             </div>
           </div>
 
-          {/* Open Source */}
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>GitHub "Pull Shark" Achievement</h4>
-                <h5>Open Source · External Repositories</h5>
-              </div>
-              <h3>2024–26</h3>
-            </div>
-            <div className="career-info-content">
-              <p>
-                Earned the GitHub <strong>Pull Shark</strong> achievement for merged pull
-                requests across external repositories. Maintains 13 public repositories
-                spanning backend systems, healthcare tech, and applied AI.
-              </p>
-            </div>
-          </div>
 
         </div>
 
