@@ -13,11 +13,29 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: border-color 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  will-change: transform;
 }
 
-.work-image-in:hover .work-card-preview {
-  border-color: rgba(94, 234, 212, 0.25);
+@media (hover: hover) {
+  .work-image-in:hover .work-card-preview,
+  .work-card-preview:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(94, 234, 212, 0.08);
+    border-color: rgba(94, 234, 212, 0.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card-preview {
+    transition: none;
+  }
+  .work-image-in:hover .work-card-preview,
+  .work-card-preview:hover {
+    transform: none;
+  }
 }
 
 /* Per-project accent colours via data-color */

@@ -114,13 +114,18 @@ const Work = () => {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (touchStart === null || touchEnd === null) return;
+
     const distance = touchStart - touchEnd;
+
     if (distance > minSwipeDistance) {
       goToNext();
     } else if (distance < -minSwipeDistance) {
       goToPrev();
     }
+
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   return (
@@ -153,7 +158,10 @@ const Work = () => {
                       </div>
                       <div className="carousel-details">
                         <div className="carousel-title-row">
-                          <h4>{project.title}</h4>
+                          <div className="carousel-title-left">
+                            <span className="carousel-num-badge">0{index + 1}</span>
+                            <h4>{project.title}</h4>
+                          </div>
                           <span className="carousel-lang-badge">{project.lang}</span>
                         </div>
                         <p className="carousel-category">
