@@ -11,8 +11,7 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
+const logoUrls = [
   "/images/react2.webp",
   "/images/next2.webp",
   "/images/node2.webp",
@@ -21,13 +20,60 @@ const imageUrls = [
   "/images/typescript.webp",
   "/images/javascript.webp",
   "/images/mysql.webp",
-  // Additional icons loaded from CDN (fallback to placeholder if blocked)
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+
+function createCleanWhiteLogoTexture(url: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 256;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return new THREE.CanvasTexture(canvas);
+
+  const renderCanvas = (img?: HTMLImageElement) => {
+    // Pure bright white to soft light-gray gradient background
+    const grad = ctx.createLinearGradient(0, 0, 512, 256);
+    grad.addColorStop(0, "#ffffff");
+    grad.addColorStop(1, "#f1f5f9");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 512, 256);
+
+    // Subtle edge ring
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.08)";
+    ctx.lineWidth = 6;
+    ctx.strokeRect(4, 4, 504, 248);
+
+    // Draw tech logo icon on front (x: 128) and back (x: 384)
+    [128, 384].forEach((centerX) => {
+      if (img && img.complete) {
+        ctx.drawImage(img, centerX - 60, 68, 120, 120);
+      }
+    });
+  };
+
+  renderCanvas();
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.ClampToEdgeWrapping;
+
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.src = url;
+  img.onload = () => {
+    renderCanvas(img);
+    texture.needsUpdate = true;
+  };
+
+  return texture;
+}
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -156,19 +202,21 @@ const TechStack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const materials = useMemo(() => {
-    return textures.map(
-      (texture) =>
-        new THREE.MeshPhysicalMaterial({
-          map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
-        })
-    );
+    return logoUrls.map((url) => {
+      const texture = createCleanWhiteLogoTexture(url);
+      return new THREE.MeshPhysicalMaterial({
+        map: texture,
+        color: "#ffffff",
+        emissive: "#ffffff",
+        emissiveIntensity: 0.1,
+        roughness: 0.25,
+        metalness: 0.1,
+        clearcoat: 0.5,
+        clearcoatRoughness: 0.05,
+      });
+    });
   }, []);
 
   return (
@@ -184,7 +232,7 @@ const TechStack = () => {
         className="tech-canvas"
         style={{ touchAction: "pan-y" }}
       >
-        <ambientLight intensity={1} />
+        <ambientLight intensity={1.8} />
         <spotLight
           position={[20, 20, 25]}
           penumbra={1}
@@ -200,7 +248,7 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[i % materials.length]}
               isActive={isActive}
             />
           ))}
