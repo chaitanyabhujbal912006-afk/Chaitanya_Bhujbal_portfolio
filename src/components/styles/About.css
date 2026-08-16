@@ -147,6 +147,20 @@
   border-color: var(--accentColor);
 }
 
+@media only screen and (max-width: 600px) {
+  .about-me p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .about-me h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  .stat-value {
+    font-size: 24px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
