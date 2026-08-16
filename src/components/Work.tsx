@@ -38,39 +38,6 @@ const projects = [
     lang: "Python",
     color: "purple",
   },
-  {
-    title: "ReachGuard",
-    category: "Local-First CVE Impact Scanner",
-    tools: "CLI, HTML, Static Analysis, CVE Database, Reachability Analysis",
-    description:
-      "Zero-cost, fully local CLI that flags not just which CVEs exist, but whether the vulnerable function is actually reachable in the code — cutting alert noise by 60–80%.",
-    githubLink: "https://github.com/chaitanyabhujbal912006-afk",
-    liveLink: "",
-    lang: "CLI / HTML",
-    color: "red",
-  },
-  {
-    title: "Snapstudio AI",
-    category: "AI-Powered Photo Editing Platform",
-    tools: "Next.js, Python, Vercel, Kaggle GPU, AI Models",
-    description:
-      "Full-stack photo editor with a Next.js frontend (deployed on Vercel) and GPU-backed inference service (Kaggle), supporting auto-enhance, background swap, art-style transfer, and object removal.",
-    githubLink: "https://github.com/chaitanyabhujbal912006-afk",
-    liveLink: "",
-    lang: "Next.js · Python",
-    color: "orange",
-  },
-  {
-    title: "NiveshLoop",
-    category: "Indian Stock Market Learning Platform",
-    tools: "TypeScript, React, Finance APIs, Ad-free",
-    description:
-      "Ad-free platform teaching Indian stock-market investing through an integrated read-and-practice loop. Covers fundamental analysis, market mechanics, and hands-on simulations.",
-    githubLink: "https://github.com/chaitanyabhujbal912006-afk",
-    liveLink: "",
-    lang: "TypeScript",
-    color: "gold",
-  },
 ];
 
 const Work = () => {
