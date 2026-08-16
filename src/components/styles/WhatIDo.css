@@ -409,18 +409,26 @@
     width: 100% !important;
     height: auto !important;
     min-height: auto !important;
-    max-height: 80px; /* Collapsed state showing only headers */
+    /* Collapsed state showing badge + title + subtitle only.
+       Bumped from 80px -> 112px: the design badge + h3 + h4 need
+       roughly ~100px with padding, so 80px was clipping content. */
+    max-height: 112px;
     padding: 20px 20px !important;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, border-color 0.3s ease;
+    padding-right: 44px !important; /* room for the chevron indicator */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, border-color 0.3s ease, background 0.3s ease;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
   .what-content-active {
     max-height: 500px !important; /* Expanded state showing descriptions & pills */
     padding: 20px 20px !important;
+    padding-right: 44px !important;
     border-color: rgba(94, 234, 212, 0.25);
+    background: rgba(94, 234, 212, 0.04);
   }
   .what-content h3 {
     font-size: 20px !important;
@@ -430,6 +438,13 @@
     font-size: 13px !important;
     margin: 0 !important;
     opacity: 0.6;
+  }
+  /* Tighten the badge on mobile so it doesn't push the header
+     out of the collapsed max-height */
+  .what-content .what-design-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
   }
   /* Slide transition elements inside card */
   .what-content p,
@@ -473,6 +488,36 @@
   .what-border2 {
     display: none !important;
   }
+  /* The desktop "sci-fi" corner brackets clash with the rounded,
+     bordered mobile cards - turn them off... */
+  .what-content::before,
+  .what-corner::before,
+  .what-corner::after {
+    display: none !important;
+  }
+  /* ...and repurpose the freed-up ::after as a tap-to-expand chevron,
+     reusing the same border-corner + rotate trick the desktop
+     .what-arrow already uses, so it stays visually consistent. */
+  .what-content::after {
+    content: "";
+    top: 24px;
+    bottom: auto;
+    left: auto;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.45);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+    transform: rotate(45deg);
+    animation: none;
+    opacity: 1;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+  }
+  .what-content-active::after {
+    transform: rotate(225deg);
+    border-color: rgba(94, 234, 212, 0.7);
+  }
 }
 @media only screen and (max-width: 550px) {
   .whatIDO {
@@ -484,6 +529,11 @@
   .what-box {
     max-width: 100%;
     margin: 0;
+  }
+  /* Slightly smaller title on narrow phones so longer service
+     names don't wrap and blow past the collapsed card height */
+  .what-content h3 {
+    font-size: 18px !important;
   }
 }
 @media only screen and (min-width: 1950px) {
